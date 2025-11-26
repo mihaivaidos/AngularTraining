@@ -1,0 +1,19 @@
+<button (click)="fetchDog()">Get Random Dog</button>
+
+@if (loading()) {
+  <div>Loading...</div>
+}
+
+@if (error()) {
+  <div class="error">
+    {{ error() }}
+  </div>
+}
+
+@if (dogImage()) {
+  <img
+    [src]="dogImage()"
+    alt="Random Dog"
+    width="300"
+  />
+}
