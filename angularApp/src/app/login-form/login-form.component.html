@@ -1,0 +1,22 @@
+<form novalidate [formGroup]="loginFormGroup" (ngSubmit)="onFormSubmit()">
+  <label for="email">Email:</label>
+  <input type="email" id="email" formControlName="email" />
+  <br>
+
+  @if (loginFormGroup.controls.email.invalid && (loginFormGroup.controls.email.touched || loginFormGroup.controls.email.dirty)) {
+    <small class="text-error">Email is required and must have a valid format.</small>
+    <br>
+  }
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" formControlName="password" />
+  <br>
+
+  @if (loginFormGroup.controls.password.invalid && (loginFormGroup.controls.password.touched || loginFormGroup.controls.password.dirty)) {
+    <small class="text-error">Password is required and must be at least 6 characters long.</small>
+    <br>
+  }
+
+  <button type="submit" [disabled]="loginFormGroup.invalid">Login</button>
+
+</form>
