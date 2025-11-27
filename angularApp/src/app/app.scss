@@ -5,15 +5,6 @@ $navbar-height: 64px;
   $navbar-height: 56px;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -43,23 +34,21 @@ $navbar-height: 64px;
 }
 
 .main-content {
-  margin-top: $navbar-height;
   padding: 32px 16px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
-  min-height: calc(100vh - #{$navbar-height});
+  min-height: calc(100vh - 64px);
 }
 
 .content-section {
   margin-bottom: 48px;
   padding: 240px;
   background-color: var(--mat-sys-surface-container);
-  border-radius: 8px;
+  min-height: calc(100vh - #{$navbar-height});
   width: 100%;
   max-width: 700px;
   box-sizing: border-box;
@@ -78,19 +67,17 @@ $navbar-height: 64px;
 }
 
 .not-found-wrapper {
-  margin-top: $navbar-height;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: calc(100vh - #{$navbar-height});
+  min-height: calc(100vh - 70px);
   padding: 32px 16px;
-  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .navbar-left a {
-    display: none;
+  min-height: calc(100vh - #{$navbar-height});
   }
 
   .navbar-title {
@@ -110,13 +97,13 @@ $navbar-height: 64px;
   }
 
   .not-found-wrapper {
-    margin-top: $navbar-height;
+    margin-top: 56px;
     padding: 16px 8px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .navbar-left a {
-    font-size: 14px;
+    margin-top: $navbar-height;
   }
 }
