@@ -9,7 +9,7 @@ type LoginForm = {
 @Component({
   selector: 'app-login-form',
   imports: [ReactiveFormsModule],
-  templateUrl: './login-form.component.html',
+  templateUrl: 'login-form.component.html',
 })
 export class LoginFormComponent {
   private readonly _formBuilder = inject(NonNullableFormBuilder);
